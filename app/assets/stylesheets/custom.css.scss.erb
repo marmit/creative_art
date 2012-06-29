@@ -1,0 +1,100 @@
+@font-face {
+  font-family: “EraserRegular”;
+  src: url('<%= asset_path 'EraserRegular.ttf' %>') format('truetype');
+}
+
+
+html {
+  background: #000;
+  border: ridge 20px #DEB887;
+  font-family: “EraserRegular”, Arial, sans-serif;
+}
+
+body {
+  background: #000;
+  font-family: “EraserRegular”, Arial, sans-serif;
+}
+
+
+
+/* Header */
+
+#logo_button{
+  background: none;
+  border: none;
+  width: 15%;
+  height: 20%;
+}
+#logo{
+  background: 0px;
+  border: none;
+  padding: 1.5%;
+  width: 16%;
+  height: 100%;
+  margin: 1% 0 0 5%;
+  float:left;
+}
+
+#login_bar{
+  display: none;
+  float: right;
+  padding: 1% 8%;
+  color: #051c01;
+}
+
+#login_bar ul li{
+  font-size: 150%;
+  list-style-type: none;
+  display: inline-block;
+}
+
+#login_bar a{
+  color: #051c01;
+  text-decoration: none;
+}
+
+#login_bar a:hover{
+  color: #0a3103;
+  text-decoration: underline;
+}
+
+/* Body */
+
+#main{
+  text-decoration: none;
+  float: right;
+  margin: 1% 5% 0 5%;
+}
+
+#main_body{
+  color: #fff;
+  margin: 1%;
+  padding: 1%;
+}
+
+h1 {
+  font-size: 250%;
+}
+
+footer {
+  color: #999;
+  a {
+    color: #555;
+    text-decoration: none;
+    &:hover {
+      color: #222;
+      text-decoration: underline;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+  }
+}
