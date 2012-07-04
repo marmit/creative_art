@@ -1,12 +1,25 @@
 <% provide(:title, "New Teacher") %>
 <%= render 'teachers/main_header' %>
 <nav id='login_bar'>
-  <h1>Add a Teacher</h1>
+  <h1>Add A New Teacher</h1>
 </nav>
 <section id='main'>
-  <section id='main_body'>
-    <h2>
-      Future Add teacher Page for <a href='http://creative-studios.herokuapp.com'>Creative Art and Drawing Studio</a>  website. We do appreciate your patients.
-    </h2>
-  </section>
+  <div class="row">
+    <%= form_for @teacher do |f| %>
+
+      <%= render 'shared/error_messages'%>
+
+      <%= f.label :teacher_name, "Full Name" %>
+      <%= f.text_field :teacher_name %></br>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %></br>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Create Teacher", class: "create_button" %>
+
+    <% end %>
+  </div>
 </section>

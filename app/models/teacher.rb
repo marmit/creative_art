@@ -12,7 +12,7 @@ class Teacher < ActiveRecord::Base
   attr_accessible :teacher_name, :password, :password_confirmation
   has_secure_password
 
-  before_save { |teacher| teacher.teacher_name = teacher_name.downcase }
+  before_save { self.teacher_name.downcase! }
 
   validates :teacher_name, presence: true, length: { maximum: 50 },                       uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 6 }

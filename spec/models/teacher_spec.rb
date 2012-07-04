@@ -27,6 +27,16 @@ describe Teacher do
     it { should_not be_valid }
   end
 
+
+  describe "name with  mixed case" do
+    before { @teacher.teacher_name = "SaM LaSSiTer" }
+
+    it "should be saved as all lower-case" do
+      @teacher.save
+      @teacher.reload.teacher_name.should == @teacher.teacher_name.downcase
+    end
+  end
+
   describe "when teacher name is too long" do
     before { @teacher.teacher_name = "a" * 51 }
     it { should_not be_valid }

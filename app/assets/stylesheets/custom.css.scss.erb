@@ -14,6 +14,7 @@ div.container {
   margin: 0;
   position: absolute;
   border: ridge 20px #DEB887;
+  color: #fff;
 }
 
 /* Header */
@@ -37,22 +38,25 @@ div.container {
   float: right;
   padding: 1% 8%;
   color: #051c01;
-}
 
-#login_bar ul li{
-  font-size: 150%;
-  list-style-type: none;
-  display: inline-block;
-}
+  ul li{
+    font-size: 150%;
+    list-style-type: none;
+    display: inline-block;
+  }
 
-#login_bar a{
+ a{
   color: #051c01;
   text-decoration: none;
-}
+    &:hover{
+      color: #0a3103;
+    text-decoration: underline;
+    }
+  }
 
-#login_bar a:hover{
-  color: #0a3103;
-  text-decoration: underline;
+  h1 {
+    color: maroon;
+  }
 }
 
 /* Body */
@@ -60,7 +64,9 @@ div.container {
 #main{
   text-decoration: none;
   float: right;
-  margin: 1% 5% 0 5%;
+  margin: 1% 5% 5% 5%;
+  width: 90%;
+  height: auto !important;
 }
 
 #main_body{
@@ -73,8 +79,19 @@ h1 {
   font-size: 250%;
 }
 
-footer {
+.row {
+  color: #fff;
+  margin: 5% 25% 5% 0;
+  padding-right: 35%;
+  padding-left: 15%;
+}
+
+/* Footer */
+
+footer, .push {
   color: #999;
+  height: 10%;
+  float: right;
   a {
     color: #555;
     text-decoration: none;
@@ -94,4 +111,100 @@ footer {
       margin-left: 10px;
     }
   }
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  color: #fff;
+  width: 100%;
+  background: blue;
+}
+
+/* Forms */
+
+form {
+}
+
+label {
+  font-size: 150%;
+  margin: 2%;
+}
+
+input, textarea, select, .uneditable-input {
+  font-size: 150%;
+  width: 100%;
+  margin: 2%;
+  padding: 2%;
+}
+
+.create_button {
+  font-size: 100%;
+  width: 150px;
+  -moz-border-radius: 5%;
+  -webkit-border-radius: 5%;
+  border-radius: 5%;
+  margin: 5%;
+  border-right: solid 3px #333;
+  border-bottom: solid 3px #333;
+
+  &:hover {
+    border-right: solid 2.25px #333;
+    border-bottom: solid 2.25px #333;
+    -moz-box-shadow: inset 0 0 1px #888;
+    -webkit-box-shadow: inset 0 0 1px #888;
+    box-shadow: inset 0 0 1px #888;
+  }
+  &:click {
+    border: none;
+    -moz-box-shadow: inset 0 0 2px 2px #888;
+    -webkit-box-shadow: inset 0 0 2px 2px #888;
+    box-shadow: inset 0 0 2px 2px #888;
+  }
+}
+
+#error_explanation {
+  color: #f00;
+  ul {
+    text-size: 75%;
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  border: solid 3px red;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+ }
+
+/* Alerts */
+.alert {
+  clear: both;
+  position: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alert-success {
+  background: green;
+  color: #fff;
+  width: 65%;
+  -moz-border-radius: 15%;
+  -webkit-border-radius: 15%;
+  border-radius: 15%;
+  border: solid 4px #222;
+  -moz-box-shadow: inset 0 0 5px #888;
+  -webkit-box-shadow: inset 0 0 5px #888;
+  box-shadow: inset 0 0 5px #888;
+}
+
+.alert-error {
+  color: red;
+  border: none;
+  background: none;
+
 }
