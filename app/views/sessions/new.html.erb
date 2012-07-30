@@ -1,0 +1,19 @@
+<% provide(:title, "Teacher Sign in") %>
+<%= render 'sessions/main_header' %>
+<nav id='login_bar'>
+  <h1>Teacher Sign in</h1>
+</nav>
+<div id="main">
+  <div class="row">
+    <%= form_for(:session, url: sessions_path) do |f|%>
+
+      <%= f.label :username, "Teacher User Name" %>
+      <%= f.text_field :username %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.submit "Sign in", class: "create_button" %>
+    <% end %>
+  </div>
+</div>

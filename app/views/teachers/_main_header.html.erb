@@ -2,4 +2,20 @@
       <div class = 'logo_container'>
         <%= link_to image_tag("creative.jpg", :alt => "Creative Art and Drawing Studio", :id => "logo"), root_path, id: "logo_button" %>
       <div>
+      <nav class = 'login_bar'>
+        <ul>
+          <% if teacher_signed_in? %>
+            <li><%= link_to "Teachers", "#{}" %></li>
+            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">My Stuff</a>
+              <ul>
+                <li><%= link_to "My page", current_teacher %></li>
+                <li><%= link_to "Settings", '#' %></li>
+              </ul>
+            </li>
+            <li>
+              <%= link_to "Sign out", teachers_signout_path, method: "delete" %>
+            </li>
+          <% end %>
+        </ul>
+      </nav>
 </header>

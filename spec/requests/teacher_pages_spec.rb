@@ -32,6 +32,7 @@ describe "Teacher Pages" do
 
     describe "with valid information" do
       before do
+        fill_in "Login Name",   with: "SamLassiter"
         fill_in "Full Name",    with: "Example Teacher"
         fill_in "Password",     with: "foobar1"
         fill_in "Confirmation", with: "foobar1"

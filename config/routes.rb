@@ -6,6 +6,11 @@ CreativeArt::Application.routes.draw do
   match "/contact", to: "static_pages#contact"
 
   resources :teachers
+  resources :sessions, only: [:new, :create, :destroy]
+
+  match '/teachers_signin',  to: 'sessions#new'
+  match '/teachers_signout', to: 'sessions#destroy', via: :delete
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

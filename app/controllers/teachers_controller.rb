@@ -11,6 +11,7 @@ class TeachersController < ApplicationController
   def create
     @teacher = Teacher.new(params[:teacher])
     if @teacher.save
+      teacher_sign_in @teacher
       flash[:success] = "Welcoming The New Teacher"
       redirect_to @teacher
     else
