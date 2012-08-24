@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     teacher = Teacher.find_by_username(params[:session][:username])
     if teacher && teacher.authenticate(params[:session][:password])
       teacher_sign_in teacher
-      redirect_to teacher
+      redirect_back_or teacher
     else
       flash.now[:error] = 'Invalid username/password combination'
       render 'new'

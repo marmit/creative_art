@@ -8,6 +8,10 @@ gem 'bootstrap-sass', '~> 2.0.0'
 
 gem 'pg'
 
+gem 'faker', '~> 1.0.1'
+
+gem 'will_paginate', '~> 3.0.3'
+
 group :development, :test do
   gem 'rspec-rails', '~> 2.10.0'
   gem 'annotate', '~> 2.4.1.beta'

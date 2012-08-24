@@ -1,0 +1,28 @@
+<%= provide(:title, "Edit teacher") %>
+<%= render 'teachers/main_header' %>
+<nav id='login_bar'>
+  <h1>Update teacher information</h1>
+</nav>
+<section id='main'>
+  <div class="row">
+    <%= form_for @teacher do |f| %>
+
+      <%= render 'shared/error_messages'%>
+
+      <%= f.label :username, "Login Name" %>
+      <%= f.text_field :username %></br>
+
+      <%= f.label :teacher_name, "Full Name" %>
+      <%= f.text_field :teacher_name %></br>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %></br>
+
+      <%= f.label :password_confirmation, "Confirm Password" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Save changes", class: "create_button" %>
+
+    <% end %>
+  </div>
+</section>

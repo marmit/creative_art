@@ -9,6 +9,7 @@
 #  password_digest :string(255)
 #  username        :string(255)
 #  remember_token  :string(255)
+#  admin           :boolean         default(FALSE)
 #
 
 class Teacher < ActiveRecord::Base
@@ -21,8 +22,14 @@ class Teacher < ActiveRecord::Base
 
   validates :username, presence: true, length: { maximum: 50 }, uniqueness: { case_sensitive: false }
   validates :teacher_name, presence: true
-  validates :password, presence: true, length: { minimum: 6 }
-  validates :password_confirmation, presence: true
+  validates :password, presence: true, length: { minimum: 6 }, on: :create
+  validates :password_confirmation, presence: true, on: :create
+
+
+
+  def to_param
+    "#{self.id}-#{self.teacher_name}"
+  end
 
   private
 

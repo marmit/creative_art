@@ -1,0 +1,8 @@
+<li>
+  <%= link_to teacher.teacher_name, teacher %>
+  <% if current_teacher.admin? && !current_teacher?(teacher) %>
+     | <%= link_to "edit", edit_teacher_path(teacher) %>
+     | <%= link_to "delete", teacher, method: :delete,
+                                     data: { confirm: "You sure?"} %>
+  <% end %>
+</li>

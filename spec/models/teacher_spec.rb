@@ -9,6 +9,7 @@
 #  password_digest :string(255)
 #  username        :string(255)
 #  remember_token  :string(255)
+#  admin           :boolean         default(FALSE)
 #
 
 require 'spec_helper'
@@ -24,9 +25,20 @@ describe Teacher do
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:remember_token) }
+  it { should respond_to(:admin) }
   it { should respond_to(:authenticate) }
 
   it { should be_valid }
+  it { should_not be_admin }
+
+  describe "with admin attribute set to true" do
+    before do
+      @teacher.save!
+      @teacher.toggle!(:admin)
+    end
+
+    it { should be_admin }
+  end
 
   describe "when teacher username is not present" do
     before { @teacher.username = " " }

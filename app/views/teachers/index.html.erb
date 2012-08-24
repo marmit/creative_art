@@ -1,0 +1,16 @@
+<% provide(:title, 'All Teachers') %>
+<%= render 'teachers/main_header' %>
+<nav id='login_bar'>
+  <h1>All Teachers</h1>
+</nav>
+<section id='main'>
+
+    <%= will_paginate %>
+
+    <ul class="teachers">
+          <%= render @teachers %>
+    </ul>
+
+    <%= will_paginate %>
+
+</section>

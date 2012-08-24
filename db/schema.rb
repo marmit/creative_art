@@ -11,15 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120730062351) do
+ActiveRecord::Schema.define(:version => 20120731053026) do
 
   create_table "teachers", :force => true do |t|
     t.string   "teacher_name"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.string   "password_digest"
     t.string   "username"
     t.string   "remember_token"
+    t.boolean  "admin",           :default => false
   end
 
   add_index "teachers", ["remember_token"], :name => "index_teachers_on_remember_token"

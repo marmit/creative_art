@@ -3,10 +3,25 @@
   src: url('<%= asset_path 'EraserRegular.ttf' %>') format('truetype');
 }
 
+@font-face {
+  font-family: “DK Crayon Crumble”;
+  src: url('<%= asset_path 'DK Crayon Crumble.ttf' %>') format('truetype');
+}
+
+
 body {
   background: #000;
   margin: 0;
   font-family: “EraserRegular”, Arial, sans-serif;
+
+  a{
+  color: #D1A5B7;
+  text-decoration: none;
+    &:hover{
+      color: #DB86A8;
+      box-shadow: 0 2px 2px -2px gray;
+    }
+  }
 }
 
 div.container {
@@ -207,4 +222,87 @@ input, textarea, select, .uneditable-input {
   border: none;
   background: none;
 
+}
+
+/* Main Static Pages */
+
+#home_page, #about, #contact_info {
+  font-size: 200%;
+  font-family: “DK Crayon Crumble”, Arial, sans-serif;
+}
+
+/* Changing Creative color */
+
+@-webkit-keyframes color_change {
+  0% { color: red; }
+  25% { color: yellow; }
+  75% { color: green; }
+  100% { color: blue; }
+}
+@-moz-keyframes color_change {
+  0% { color: red; }
+  25% { color: yellow; }
+  75% { color: green; }
+  100% { color: blue; }
+}
+@-ms-keyframes color_change {
+  0% { color: red; }
+  25% { color: yellow; }
+  75% { color: green; }
+  100% { color: blue; }
+}
+@-o-keyframes color_change {
+  0% { color: red; }
+  25% { color: yellow; }
+  75% { color: green; }
+  100% { color: blue; }
+}
+@keyframes color_change {
+  0% { color: red; }
+  25% { color: yellow; }
+  75% { color: green; }
+  100% { color: blue; }
+}
+
+b#company_name {
+  color: red;
+  -webkit-animation: color_change 7s infinite alternate;
+  -moz-animation: color_change 7s infinite alternate;
+  -ms-animation: color_change 7s infinite alternate;
+  -o-animation: color_change 7s infinite alternate;
+  animation: color_change 7s infinite alternate;
+}
+
+/* users index */
+
+.teachers {
+  list-style: none;
+  text-decoration: none;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid #333;
+    a {
+      color: #555;
+      text-decoration: none;
+      &:hover {
+        color: #222;
+        text-decoration: underline;
+      }
+    }
+    &:last-child {
+      border-bottom: 1px solid #333;
+    }
+  }
+}
+
+div.pagination {
+  a{
+  color: #051c01;
+  text-decoration: none;
+    &:hover{
+      color: #0a3103;
+    text-decoration: underline;
+    }
+  }
 }
