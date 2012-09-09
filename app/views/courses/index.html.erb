@@ -1,0 +1,19 @@
+<% provide(:title, "All Courses") %>
+<%= render 'courses/main_header' %>
+<nav id='login_bar'>
+  <h1>All Courses</h1>
+  <% if teacher_signed_in? %>
+    <% if current_teacher.admin? %>
+      <%= link_to 'Add A New Course', new_course_path, :class=>'new' %>
+    <% end %>
+  <% end %>
+</nav>
+<section id='main'>
+  <%= will_paginate %>
+
+    <ul class="courses">
+          <%= render @courses %>
+    </ul>
+
+    <%= will_paginate %>
+</section>

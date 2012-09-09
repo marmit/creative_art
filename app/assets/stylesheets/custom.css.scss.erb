@@ -51,7 +51,7 @@ body {
 #logo{
   border-right: solid 2.75px #333;
   border-bottom: solid 2.25px #333;
-  width: 16%;
+  width: 20%;
   height: 16%;
   margin: 1% 0 0 5%;
   float:left;
@@ -69,11 +69,20 @@ body {
   }
 
  a{
-  color: #051c01;
+  color: yellow;
   text-decoration: none;
     &:hover{
       color: #0a3103;
-    text-decoration: underline;
+      text-decoration: underline;
+    }
+  }
+
+  a.new {
+  color: #624C92;
+  text-decoration: none;
+    &:hover{
+      color: #4E387E;
+      text-decoration: underline;
     }
   }
 
@@ -306,9 +315,9 @@ b#company_name {
   animation: color_change 7s infinite alternate;
 }
 
-/* users index */
+/* teachers/courses index */
 
-.teachers {
+.teachers, .courses {
   list-style: none;
   text-decoration: none;
   li {
@@ -339,3 +348,158 @@ div.pagination {
     }
   }
 }
+
+/* Calendar */
+
+div#calendar_courses {
+  display: none;
+  font-size: 150%;
+  position: absolute;
+  top: 4%;
+  left: 1%;
+  right: 10%;
+  float: center;
+}
+
+#calendar_courses .calendar, #calendar_courses_page .calendar {
+  border-collapse: collapse;
+  width: 110%;
+
+  td, th {
+    font-family: "Lucida Grande", arial, helvetica, sans-serif;
+    font-size: 10px;
+    padding: 6px;
+    border: 1px solid #999;
+  }
+
+  th {
+    background: #DDD;
+    color: #666;
+    text-align: center;
+    width: 14.2857142857143%;
+  }
+
+  td {
+    background: #FFF;
+    color: #777;
+    height: 80px;
+    vertical-align: top;
+    font-size: 16px;
+  }
+
+  .notmonth, .notmonth a { color: #CCC; }
+  .today { background-color: #D7F2FF; }
+}
+
+#calendar_courses #month, #calendar_courses_page #month {
+  font-family: "Lucida Grande", arial, helvetica, sans-serif;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 150%;
+  background: #DDD;
+  width: 110%;
+  a {
+    text-decoration: none;
+    padding: 0 10px;
+    color: #999;
+  }
+}
+
+#calendar_courses ul, #calendar_courses_page ul {
+  font-size: 100%;
+  padding-left: 20px;
+}
+
+li#calender_link {
+  font-size: 110%;
+  list-style-type: none;
+}
+
+#calendar_courses_show {
+  font-size: 150%;
+  float: center;
+  left: 20%;
+  right: 20%;
+  position: absolute;
+  top: 1.5%;
+  color: #aa44ff;
+  -webkit-animation: color_change 7s infinite alternate;
+  -moz-animation: color_change 7s infinite alternate;
+  -ms-animation: color_change 7s infinite alternate;
+  -o-animation: color_change 7s infinite alternate;
+  animation: color_change 7s infinite alternate;
+  &:hover{
+    -webkit-animation: stop;
+    -moz-animation: stop;
+    -ms-animation: stop;
+    -o-animation: stop;
+    animation: stop;
+    color: pink;
+  }
+}
+
+#calendar_courses_hide {
+  display: none;
+  font-size: 150%;
+  float: center;
+  left: 20%;
+  right: 20%;
+  position: absolute;
+  top: 1.5%;
+  color: #aa44ff;
+  -webkit-animation: color_change 7s infinite alternate;
+  -moz-animation: color_change 7s infinite alternate;
+  -ms-animation: color_change 7s infinite alternate;
+  -o-animation: color_change 7s infinite alternate;
+  animation: color_change 7s infinite alternate;
+  &:hover{
+    -webkit-animation: stop;
+    -moz-animation: stop;
+    -ms-animation: stop;
+    -o-animation: stop;
+    animation: stop;
+    color: pink;
+  }
+}
+
+div#calendar_courses_page {
+  font-size: 150%;
+  top: 4%;
+  left: 1%;
+  right: 10%;
+  float: center;
+}
+
+#calendar_courses_page #month {
+  width: 100%;
+}
+
+#calendar_courses_page .calendar {
+  width: 100%;
+}
+
+/* Tooltip */
+
+span.tooltip {
+  font-size: 14px;
+  position: absolute;
+  border: 5px double #000;
+  -webkit-box-shadow: 5px 5px 10px #000;
+  -moz-box-shadow: 5px 5px 10px #000;
+  box-shadow: 5px 5px 10px #000;
+  background: #99FFCC;
+  cursor: help;
+  display: inline-block;
+  text-decoration: none;
+  color: #222;
+  padding:.75%;
+}
+
+
+.tooltip:hover
+{
+  border: 0; /* IE6 fix */
+}
+

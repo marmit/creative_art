@@ -1,12 +1,12 @@
-<section id="landing_page">
-  <%= image_tag "creative.jpg", :id => "landing_image"%>
-</section>
-<div id="calendar_courses">
+<% provide(:title, "Calendar") %>
+<div id="calendar_courses_page">
   <% @courses = Course.all %>
   <% @courses_by_day = @courses.group_by(&:day_of_week) %>
   <% @date = params[:date] ? Date.parse(params[:date]) : Date.today %>
   <h2 id="month">
+    <%= link_to "<", date: @date.prev_month %>
     <%= @date.strftime("%B %Y") %>
+    <%= link_to ">", date: @date.next_month %>
   </h2>
   <%= calendar @date do |date| %>
     <%= date.day %>
@@ -23,6 +23,4 @@
     <% end %>
   <% end %>
 </div>
-<div id='calendar_courses_show'>Show This Months Calendar</div>
-<div id='calendar_link'><%= link_to "Calendars For Events Past This Month",   calendar_path %></div>
-<div id='calendar_courses_hide'>Hide This Months Calendar</div>
+<div id="to_home_page"><%= link_to "<< Back To The Home Page", root_path %></div>

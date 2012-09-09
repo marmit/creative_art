@@ -1,0 +1,28 @@
+<%= provide(:title, "Edit Course") %>
+<%= render 'courses/main_header' %>
+<nav id='login_bar'>
+  <h1>Update Course Information</h1>
+</nav>
+<section id='main'>
+  <div class="row">
+    <%= form_for @course do |f| %>
+
+      <%= render 'shared/course_error_messages'%>
+
+      <%= f.label :title %>
+      <%= f.text_field :title%><br />
+
+      <%= f.label :description %>
+      <%= f.text_area :description%><br />
+
+      <%= f.label :start_date %>
+      <%= f.text_field :start_date%><br />
+
+      <%= f.label :start_time %>
+      <%= f.text_field :start_time%>
+
+      <%= f.submit "Save changes", class: "create_button" %>
+
+    <% end %>
+  </div>
+</section>

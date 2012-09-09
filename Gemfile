@@ -12,6 +12,12 @@ gem 'faker', '~> 1.0.1'
 
 gem 'will_paginate', '~> 3.0.3'
 
+
+gem 'jquery-rails'
+
+gem 'jquery-ui-rails'
+
+
 group :development, :test do
   gem 'rspec-rails', '~> 2.10.0'
   gem 'annotate', '~> 2.4.1.beta'
@@ -30,7 +36,6 @@ group :assets do
   gem 'uglifier', '>= 1.2.3'
 end
 
-gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.1'

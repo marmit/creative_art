@@ -2,6 +2,11 @@
 <%= render 'teachers/main_header' %>
 <nav id='login_bar'>
   <h1>All Teachers</h1>
+  <% if teacher_signed_in? %>
+    <% if current_teacher.admin? %>
+      <%= link_to 'Add A New Teacher', new_teacher_path, :class=>'new' %>
+    <% end %>
+  <% end %>
 </nav>
 <section id='main'>
 

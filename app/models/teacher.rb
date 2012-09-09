@@ -14,6 +14,7 @@
 
 class Teacher < ActiveRecord::Base
   attr_accessible :username, :teacher_name, :password, :password_confirmation
+  attr_reader :created_at
   has_secure_password
 
   before_save { self.username.downcase! }
@@ -28,7 +29,7 @@ class Teacher < ActiveRecord::Base
 
 
   def to_param
-    "#{self.id}-#{self.teacher_name}"
+    "#{self.id}-#{(self.teacher_name).gsub(/\s+/, "-")}"
   end
 
   private

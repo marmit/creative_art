@@ -27,6 +27,7 @@ class TeachersController < ApplicationController
   end
 
   def edit
+    @teacher = Teacher.find(params[:id])
   end
 
   def update
@@ -34,6 +35,7 @@ class TeachersController < ApplicationController
       params.delete(:password)
       params.delete(:password_confirmation) if params[:password_confirmation].blank?
     end
+    @teacher = Teacher.find(params[:id])
     if @teacher.update_attributes(params[:teacher])
       flash[:success] = "Profile updated"
       if !current_teacher.admin?

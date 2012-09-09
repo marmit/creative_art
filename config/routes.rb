@@ -4,6 +4,9 @@ CreativeArt::Application.routes.draw do
   match "/help",    to: 'static_pages#help'
   match "/about",   to: "static_pages#about"
   match "/contact", to: "static_pages#contact"
+  match "/calendar", to: "static_pages#calendar"
+
+  resources :courses
 
   resources :teachers
   resources :sessions, only: [:new, :create, :destroy]

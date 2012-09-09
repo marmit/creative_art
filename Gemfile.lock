@@ -76,6 +76,9 @@ GEM
     jquery-rails (2.0.2)
       railties (>= 3.2.0, < 5.0)
       thor (~> 0.14)
+    jquery-ui-rails (2.0.0)
+      jquery-rails
+      railties (>= 3.1.0)
     json (1.7.3)
     libnotify (0.5.9)
       ffi (~> 1.0.0)
@@ -181,6 +184,7 @@ DEPENDENCIES
   guard-rspec (~> 0.5.5)
   guard-spork (~> 0.3.2)
   jquery-rails
+  jquery-ui-rails
   libnotify (~> 0.5.9)
   pg
   rails (= 3.2.3)
